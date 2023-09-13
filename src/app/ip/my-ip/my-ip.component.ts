@@ -8,6 +8,7 @@ import { IpService } from 'src/app/services/ip.service';
 })
 export class MyIpComponent {
   data: any;
+  position: any = {}
 
   constructor(private ipService: IpService) { }
 
@@ -15,7 +16,8 @@ export class MyIpComponent {
     this.ipService.fetchData().subscribe(
       (response) => {
         this.data = response;
-        console.log(this.data);
+        this.position.lat = response.latitude
+        this.position.lng = response.longitude
       },
       (error) => {
         console.error(error);

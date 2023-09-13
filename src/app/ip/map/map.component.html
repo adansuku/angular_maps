@@ -1,3 +1,8 @@
-<p>map works!</p>
-<div id="map"
-	style="height: 400px;"></div>
+<google-map width="800px"
+	height="600px"
+	[center]="position">
+	<map-marker [position]="position"
+		[label]="label"></map-marker>
+	<p>Your server position is: {{ position.lat}} - {{ position.lng }}
+	</p>
+</google-map>
